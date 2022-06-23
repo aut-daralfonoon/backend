@@ -1,5 +1,10 @@
 package cmd
 
-func Execute() {
+import (
+    "log"
+)
 
+func Execute() {
+    log.Println("go vim")
 }
+
