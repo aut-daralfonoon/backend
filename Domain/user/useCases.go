@@ -9,3 +9,8 @@ type UserInteractor interface{
 	UpdateUser()
 	DeleteUser()
 }
+
+
+type userInteractor struct{
+	
+}
