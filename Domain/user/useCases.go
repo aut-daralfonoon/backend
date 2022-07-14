@@ -2,7 +2,7 @@ package user
 
 
 
-type userInteractor interface{
+type UserInteractor interface{
 	User()
 	Users()
 	CreateUser()
