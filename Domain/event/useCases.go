@@ -1,5 +1,5 @@
 package event
 
-type eventInteractor interface{
+type eventManager interface{
 	
 }
