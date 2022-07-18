@@ -11,6 +11,6 @@ type UserManager interface{
 }
 
 
-type userInteractor struct{
+type userManager struct{
 	
 }
