@@ -5,7 +5,7 @@ package user
 type UserManager interface{
 	User()
 	Users()
-	RegisterUser()
+	SignUp()
 	EditUser()
 	DeleteUser()
 }
