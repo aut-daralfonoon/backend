@@ -17,6 +17,10 @@ type PresentationDto struct {
 }
 
 type PresenterDto struct {
+	Name        string `json:"name"`
+	Title       string `json:"title"`
+	Description string `json:"description"`
+	Image       string `json:"image"`
 }
 
 type SponsorDto struct {
