@@ -1,0 +1,153 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Back-end",
+    "description": "Daralfonoon back-end",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://virtserver.swaggerhub.com/amirhnajafiz/Daralfonoon/1.0.0",
+      "description": "SwaggerHub API Auto Mocking"
+    }
+  ],
+  "paths": {
+    "/api/events": {
+      "get": {
+        "summary": "returns the list of all events",
+        "description": "all events endpoint",
+        "responses": {
+          "200": {
+            "description": "array of events (json)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/inline_response_200"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/register": {
+      "post": {
+        "summary": "registering for a workshop",
+        "description": "register for a workshop with email",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/api_register_body"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "valid registraion"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "apievents_presenter_company": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "example": "Snapp!"
+          },
+          "description": {
+            "type": "string",
+            "example": "Snapp is good"
+          },
+          "logo": {
+            "type": "string",
+            "description": "logo link"
+          }
+        },
+        "example": null
+      },
+      "apievents_presenter": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "example": "parham alvani"
+          },
+          "title": {
+            "type": "string",
+            "example": "back-end developer"
+          },
+          "description": {
+            "type": "string",
+            "example": "Parham biography"
+          },
+          "image": {
+            "type": "string",
+            "description": "image link"
+          },
+          "company": {
+            "$ref": "#/components/schemas/apievents_presenter_company"
+          }
+        },
+        "example": null
+      },
+      "inline_response_200": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "example": 1
+          },
+          "title": {
+            "type": "string",
+            "example": "Docker Workshop"
+          },
+          "description": {
+            "type": "string",
+            "example": "Workshop is about docker"
+          },
+          "date": {
+            "type": "string",
+            "example": "2/2/2022 17:00 PM"
+          },
+          "enable": {
+            "type": "boolean",
+            "description": "is registration enable or not",
+            "example": true
+          },
+          "poster": {
+            "type": "string",
+            "description": "poster link"
+          },
+          "presenter": {
+            "$ref": "#/components/schemas/apievents_presenter"
+          }
+        }
+      },
+      "api_register_body": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "description": "event id (needs validation)",
+            "example": 1
+          },
+          "email": {
+            "type": "string",
+            "description": "user email (needs validation)",
+            "example": "parham.alvani@snapp.cab"
+          }
+        }
+      }
+    }
+  }
+}
