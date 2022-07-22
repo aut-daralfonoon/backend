@@ -7,6 +7,7 @@ type Presentation struct {
 	EventId       uint
 	Title         uint
 	SessionStatus SessionStatus
+	Capacity      uint
 	Start         time.Time
 	End           time.Time
 	Archived_at   time.Time
