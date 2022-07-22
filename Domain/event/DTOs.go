@@ -24,4 +24,7 @@ type PresenterDto struct {
 }
 
 type SponsorDto struct {
+	Name		string	`json:"name"`
+	Description	string	`json:"description"`
+	Logo		string	`json:"logo"`
 }
