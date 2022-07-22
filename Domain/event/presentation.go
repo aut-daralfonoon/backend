@@ -3,16 +3,17 @@ package event
 import "time"
 
 type Presentation struct {
-	Id            uint
-	EventId       uint
-	Title         uint
-	SessionStatus SessionStatus
-	Capacity      uint
-	Start         time.Time
-	End           time.Time
-	Archived_at   time.Time
-	Created_at    time.Time
-	Updated_at    time.Time
+	Id                uint
+	EventId           uint
+	Title             uint
+	SessionStatus     SessionStatus
+	Capacity          uint
+	ParticipantNumber uint
+	Start             time.Time
+	End               time.Time
+	Archived_at       time.Time
+	Created_at        time.Time
+	Updated_at        time.Time
 }
 
 type SessionStatus string
