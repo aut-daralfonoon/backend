@@ -1,8 +1,8 @@
 package event
 
 type EventManager interface {
-	Event(Id uint) (*Event, error)
-	Events() ([]*Event, error)
+	Event(Id uint) (*EventDto, error)
+	Events() ([]*EventDto, error)
 	AddEvent()
 	ModifyEvent()
 	PublishEvent()
