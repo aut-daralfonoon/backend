@@ -6,6 +6,7 @@ type Presentation struct {
 	Id                uint
 	EventId           uint
 	Title             uint
+	PresentationType  PresentationType
 	SessionStatus     SessionStatus
 	Capacity          uint
 	ParticipantNumber uint
@@ -22,4 +23,11 @@ const (
 	ClosedToJoin    SessionStatus = "closed_to_join"
 	OpenToJoin      SessionStatus = "open_to_join"
 	ArchivedSession SessionStatus = "archived"
+)
+
+type PresentationType string
+
+const (
+	Workshop PresentationType = "workshop"
+	Talk     PresentationType = "talk"
 )
