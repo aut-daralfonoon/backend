@@ -1,5 +1,7 @@
 package event
 
+import "fmt"
+
 type eventManager struct {
 }
 
@@ -8,7 +10,11 @@ func NewEventManger() EventManager {
 }
 
 func (em *eventManager) Event(Id uint) (*EventDto, error) {
-	
+	var event *Event
+	err := em.GetEvent(event)
+	if err != nil {
+		return nil, fmt.Errorf("could not get event: %w", err)
+	}
 	return nil, nil
 }
 
@@ -16,11 +22,11 @@ func (em *eventManager) Events() ([]*EventDto, error) {
 	return nil, nil
 }
 
-func (em *eventManager) AddEvent(*EventDto) (error) {
+func (em *eventManager) AddEvent(*EventDto) error {
 	return nil
 }
 
-func (em *eventManager) ModifyEvent(*EventDto) (error) {
+func (em *eventManager) ModifyEvent(*EventDto) error {
 	return nil
 }
 
