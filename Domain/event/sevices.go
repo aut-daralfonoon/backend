@@ -8,6 +8,7 @@ func NewEventManger() EventManager {
 }
 
 func (em *eventManager) Event(Id uint) (*EventDto, error) {
+	
 	return nil, nil
 }
 
@@ -15,23 +16,23 @@ func (em *eventManager) Events() ([]*EventDto, error) {
 	return nil, nil
 }
 
-func (em *eventManager) AddEvent() {
+func (em *eventManager) AddEvent(*EventDto) (error) {
 
 }
 
-func (em *eventManager) ModifyEvent() {
+func (em *eventManager) ModifyEvent(*EventDto) (error) {
 
 }
 
-func (em *eventManager) PublishEvent() {
+func (em *eventManager) PublishEvent(EventId uint) error {
 
 }
 
-func (em *eventManager) ArchiveEvent() {
+func (em *eventManager) ArchiveEvent(EventId uint) error {
 
 }
 
-func (em *eventManager) DeleteEvent() {
+func (em *eventManager) DeleteEvent(EventId uint) error {
 
 }
 
@@ -43,6 +44,6 @@ func (em *eventManager) SingleSubjectRegister(eventId uint, userEmail string) er
 	return nil
 }
 
-func (em *eventManager) GetEventParticipants() {
+func (em *eventManager) GetEventParticipants(EventId uint) []string {
 
 }
