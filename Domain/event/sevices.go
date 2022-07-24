@@ -20,7 +20,20 @@ func (em *eventManager) Event(Id uint) (*EventDto, error) {
 }
 
 func (em *eventManager) Events() ([]*EventDto, error) {
-	return nil, nil
+	var events []*Event
+	err := em.GetEvents(events)
+	if err != nil {
+		return nil, err
+	}
+	eventDtos := []*EventDto{}
+	for _, e := range events {
+		ed ,err := MapEventDto(e)
+		if err != nil {
+			return nil, err
+		}
+		eventDtos = append(eventDtos, ed )
+	}
+	return eventDtos, nil
 }
 
 func (em *eventManager) AddEvent(*EventDto) error {
