@@ -10,12 +10,13 @@ func NewEventManger() EventManager {
 }
 
 func (em *eventManager) Event(Id uint) (*EventDto, error) {
-	var event *Event
+	event := &Event{Id: Id}
 	err := em.GetEvent(event)
 	if err != nil {
 		return nil, fmt.Errorf("could not get event: %w", err)
 	}
-	return nil, nil
+
+	return MapEventDto(event)
 }
 
 func (em *eventManager) Events() ([]*EventDto, error) {
