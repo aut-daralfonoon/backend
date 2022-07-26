@@ -36,7 +36,13 @@ func (em *eventManager) Events() ([]*EventDto, error) {
 	return eventDtos, nil
 }
 
-func (em *eventManager) AddEvent(*EventDto) error {
+func (em *eventManager) AddEvent(eventDto *EventDto) error {
+	event,err := MapEvent(eventDto)
+	if err != nil {
+		return err
+	}
+	
+
 	return nil
 }
 
