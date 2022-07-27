@@ -1,10 +1,10 @@
 package event
 
 
-func (em * eventManager) GetEvent(event *Event) error{
+func ReadEvent(event *Event) error{
 	return nil
 }
 
-func (em * eventManager) GetEvents(events []*Event) error{
+func ReadEvents(events []*Event) error{
 	return nil
 }

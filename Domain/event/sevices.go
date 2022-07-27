@@ -2,16 +2,10 @@ package event
 
 import "fmt"
 
-type eventManager struct {
-}
 
-func NewEventManger() EventManager {
-	return &eventManager{}
-}
-
-func (em *eventManager) Event(Id uint) (*EventDto, error) {
+func GetEvent(Id uint) (*EventDto, error) {
 	event := &Event{Id: Id}
-	err := em.GetEvent(event)
+	err := ReadEvent(event)
 	if err != nil {
 		return nil, fmt.Errorf("could not get event: %w", err)
 	}
@@ -19,9 +13,9 @@ func (em *eventManager) Event(Id uint) (*EventDto, error) {
 	return MapEventDto(event)
 }
 
-func (em *eventManager) Events() ([]*EventDto, error) {
+func GetEvents() ([]*EventDto, error) {
 	var events []*Event
-	err := em.GetEvents(events)
+	err := ReadEvents(events)
 	if err != nil {
 		return nil, err
 	}
@@ -36,7 +30,7 @@ func (em *eventManager) Events() ([]*EventDto, error) {
 	return eventDtos, nil
 }
 
-func (em *eventManager) AddEvent(eventDto *EventDto) error {
+func AddEvent(eventDto *EventDto) error {
 	event,err := MapEvent(eventDto)
 	if err != nil {
 		return err
@@ -46,30 +40,30 @@ func (em *eventManager) AddEvent(eventDto *EventDto) error {
 	return nil
 }
 
-func (em *eventManager) ModifyEvent(*EventDto) error {
+func ModifyEvent(*EventDto) error {
 	return nil
 }
 
-func (em *eventManager) PublishEvent(EventId uint) error {
+func PublishEvent(EventId uint) error {
 	return nil
 }
 
-func (em *eventManager) ArchiveEvent(EventId uint) error {
+func ArchiveEvent(EventId uint) error {
 	return nil
 }
 
-func (em *eventManager) DeleteEvent(EventId uint) error {
+func DeleteEvent(EventId uint) error {
 	return nil
 }
 
-func (em *eventManager) Register() {
+func Register() {
 
 }
 
-func (em *eventManager) SingleSubjectRegister(eventId uint, userEmail string) error {
+func SingleSubjectRegister(eventId uint, userEmail string) error {
 	return nil
 }
 
-func (em *eventManager) GetEventParticipants(EventId uint) []string {
+func GetEventParticipants(EventId uint) []string {
 	return nil
 }
