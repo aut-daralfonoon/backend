@@ -38,6 +38,10 @@ func AddEvent(eventDto *EventDto) error {
 	return nil
 }
 
+func validateEvent(event *Event) error{
+	return nil
+}
+
 func ModifyEvent(*EventDto) error {
 	return nil
 }
