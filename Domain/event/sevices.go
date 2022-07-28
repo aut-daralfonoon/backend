@@ -34,7 +34,7 @@ func AddEvent(eventDto *EventDto) error {
 	if err != nil {
 		return err
 	}
-
+	validateEvent(event)
 	return nil
 }
 
