@@ -2,7 +2,6 @@ package event
 
 import "fmt"
 
-
 func GetEvent(Id uint) (*EventDto, error) {
 	event := &Event{Id: Id}
 	err := ReadEvent(event)
@@ -19,24 +18,25 @@ func GetEvents() ([]*EventDto, error) {
 	if err != nil {
 		return nil, err
 	}
+
 	eventDtos := []*EventDto{}
 	for _, e := range events {
-		ed ,err := MapEventDto(e)
+		ed, err := MapEventDto(e)
 		if err != nil {
 			return nil, err
 		}
-		eventDtos = append(eventDtos, ed )
+		eventDtos = append(eventDtos, ed)
 	}
+
 	return eventDtos, nil
 }
 
 func AddEvent(eventDto *EventDto) error {
-	event,err := MapEvent(eventDto)
+	event, err := MapEvent(eventDto)
 	if err != nil {
 		return err
 	}
 	
-
 	return nil
 }
 
