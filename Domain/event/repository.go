@@ -4,7 +4,7 @@ func CreateEvent(event *Event) error {
 	return nil
 }
 
-func ReadEvent() (*Event, error) {
+func ReadEvent(Id uint) (*Event, error) {
 	var event *Event
 	return event,nil
 }

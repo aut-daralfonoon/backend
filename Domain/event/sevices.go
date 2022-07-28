@@ -3,8 +3,7 @@ package event
 import "fmt"
 
 func GetEvent(Id uint) (*EventDto, error) {
-	event := &Event{Id: Id}
-	err := ReadEvent(event)
+	event, err := ReadEvent(Id)
 	if err != nil {
 		return nil, fmt.Errorf("could not get event: %w", err)
 	}
@@ -13,8 +12,7 @@ func GetEvent(Id uint) (*EventDto, error) {
 }
 
 func GetEvents() ([]*EventDto, error) {
-	var events []*Event
-	err := ReadEvents(events)
+	events, err := ReadEvents()
 	if err != nil {
 		return nil, err
 	}
@@ -36,7 +34,7 @@ func AddEvent(eventDto *EventDto) error {
 	if err != nil {
 		return err
 	}
-	
+
 	return nil
 }
 
