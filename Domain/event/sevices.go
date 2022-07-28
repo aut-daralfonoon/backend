@@ -34,8 +34,9 @@ func AddEvent(eventDto *EventDto) error {
 	if err != nil {
 		return err
 	}
+
 	if err:= validateEvent(event); err!=nil{
-		return fmt.Errorf("Invalid Event: %w" , err)
+		return fmt.Errorf("invalid event: %w" , err)
 	}
 
 	return nil
