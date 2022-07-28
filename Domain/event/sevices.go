@@ -39,6 +39,10 @@ func AddEvent(eventDto *EventDto) error {
 		return fmt.Errorf("invalid event: %w" , err)
 	}
 
+	if err:= CreateEvent(event); err != nil{
+		return fmt.Errorf("could not save: %w" , err)
+	}
+	
 	return nil
 }
 
