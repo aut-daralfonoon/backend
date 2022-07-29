@@ -2,6 +2,6 @@ package user
 
 
 //user model
-type user struct{
+type UserModel struct{
 	
 }
