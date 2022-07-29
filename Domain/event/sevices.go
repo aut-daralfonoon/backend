@@ -2,7 +2,7 @@ package event
 
 import "fmt"
 
-func GetEvent(Id uint) (*EventDto, error) {
+func Event(Id uint) (*EventDTO, error) {
 	event, err := ReadEvent(Id)
 	if err != nil {
 		return nil, fmt.Errorf("could not get event: %w", err)
@@ -11,13 +11,13 @@ func GetEvent(Id uint) (*EventDto, error) {
 	return MapEventDto(event)
 }
 
-func GetEvents() ([]*EventDto, error) {
+func Events() ([]*EventDTO, error) {
 	events, err := ReadEvents()
 	if err != nil {
 		return nil, err
 	}
 
-	eventDtos := []*EventDto{}
+	eventDtos := []*EventDTO{}
 	for _, e := range events {
 		ed, err := MapEventDto(e)
 		if err != nil {
@@ -29,28 +29,28 @@ func GetEvents() ([]*EventDto, error) {
 	return eventDtos, nil
 }
 
-func AddEvent(eventDto *EventDto) error {
+func AddEvent(eventDto *EventDTO) error {
 	event, err := MapEvent(eventDto)
 	if err != nil {
 		return err
 	}
 
-	if err:= validateEvent(event); err!=nil{
-		return fmt.Errorf("invalid event: %w" , err)
+	if err := validateEvent(event); err != nil {
+		return fmt.Errorf("invalid event: %w", err)
 	}
 
-	if err:= CreateEvent(event); err != nil{
-		return fmt.Errorf("could not save: %w" , err)
+	if err := CreateEvent(event); err != nil {
+		return fmt.Errorf("could not save: %w", err)
 	}
-	
+
 	return nil
 }
 
-func validateEvent(event *Event) error{
+func validateEvent(event *EventModel) error {
 	return nil
 }
 
-func ModifyEvent(*EventDto) error {
+func ModifyEvent(*EventDTO) error {
 	return nil
 }
 

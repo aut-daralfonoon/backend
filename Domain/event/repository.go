@@ -1,15 +1,15 @@
 package event
 
-func CreateEvent(event *Event) error {
+func CreateEvent(event *EventModel) error {
 	return nil
 }
 
-func ReadEvent(Id uint) (*Event, error) {
-	var event *Event
-	return event,nil
+func ReadEvent(Id uint) (*EventModel, error) {
+	var event *EventModel
+	return event, nil
 }
 
-func ReadEvents() ([]*Event, error) {
-	var events []*Event
-	return events,nil
+func ReadEvents() ([]*EventModel, error) {
+	var events []*EventModel
+	return events, nil
 }

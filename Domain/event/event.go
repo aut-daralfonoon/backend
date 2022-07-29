@@ -4,7 +4,7 @@ import (
 	"time"
 )
 
-type Event struct {
+type EventModel struct {
 	Id           uint
 	Title        uint
 	Event_Status Event_Status

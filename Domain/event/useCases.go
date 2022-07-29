@@ -1,10 +1,10 @@
 package event
 
 type EventManager interface {
-	Event(Id uint) (*EventDto, error)
-	Events() ([]*EventDto, error)
-	AddEvent(*EventDto) (error)
-	ModifyEvent(*EventDto) (error)
+	EventModel(Id uint) (*EventDTO, error)
+	Events() ([]*EventDTO, error)
+	AddEvent(*EventDTO) error
+	ModifyEvent(*EventDTO) error
 	PublishEvent(EventId uint) error
 	ArchiveEvent(EventId uint) error
 	DeleteEvent(EventId uint) error

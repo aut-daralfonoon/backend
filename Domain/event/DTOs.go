@@ -2,7 +2,7 @@ package event
 
 import "time"
 
-type EventDto struct {
+type EventDTO struct {
 	Id          uint         `json:"id"`
 	Title       uint         `json:"title"`
 	Description string       `json:"description"`
@@ -24,7 +24,7 @@ type PresenterDto struct {
 }
 
 type SponsorDto struct {
-	Name		string	`json:"name"`
-	Description	string	`json:"description"`
-	Logo		string	`json:"logo"`
+	Name        string `json:"name"`
+	Description string `json:"description"`
+	Logo        string `json:"logo"`
 }
