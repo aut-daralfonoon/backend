@@ -24,3 +24,7 @@ func EditPresentation(pr *PresentationDto) error{
 func DeletePresentation(ID uint) error{
 	return nil
 }
+
+func getPresenters(prID uint)([]*PresenterDto, error){
+	return nil,nil
+} 
