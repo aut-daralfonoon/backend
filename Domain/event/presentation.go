@@ -2,7 +2,7 @@ package event
 
 import "time"
 
-type Presentation struct {
+type PresentationModel struct {
 	Id                uint
 	EventId           uint
 	Title             uint
