@@ -1,23 +1,23 @@
 package event
 
 
-func Presentation(ID uint) (*PresentationDto, error){
+func Presentation(ID uint) (*PresentationDTO, error){
 	return nil,nil
 }
 
-func Presentations()([]*PresentationDto, error){
+func Presentations()([]*PresentationDTO, error){
 	return nil,nil
 }
 
-func PresentationsByEvent(eventID uint)([]*PresentationDto, error){
+func PresentationsByEvent(eventID uint)([]*PresentationDTO, error){
 	return nil,nil
 }
 
-func AddPresentation(pr *PresentationDto) error{
+func AddPresentation(pr *PresentationDTO) error{
 	return nil
 }
 
-func EditPresentation(pr *PresentationDto) error{
+func EditPresentation(pr *PresentationDTO) error{
 	return nil
 }
 
@@ -25,6 +25,6 @@ func DeletePresentation(ID uint) error{
 	return nil
 }
 
-func getPresenters(prID uint)([]*PresenterDto, error){
-	return nil,nil
+func getPresenters(prID uint)([]*PresenterDTO,[]*SponsorDTO, error){
+	return nil,nil,nil
 } 
