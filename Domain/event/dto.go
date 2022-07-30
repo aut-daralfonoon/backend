@@ -9,21 +9,22 @@ type EventDTO struct {
 	Date        time.Time    `json:"date"`
 	Enable      bool         `json:"enable"`
 	Poster      string       `json:"poster"`
-	Presenter   PresenterDto `json:"presenter"`
-	Sponsor     SponsorDto   `json:"sponsor"`
+	Presenter   PresenterDTO `json:"presenter"`
+	Sponsor     SponsorDTO   `json:"sponsor"`
 }
 
-type PresentationDto struct {
+type PresentationDTO struct {
+	ID uint
 }
 
-type PresenterDto struct {
+type PresenterDTO struct {
 	Name        string `json:"name"`
 	Title       string `json:"title"`
 	Description string `json:"description"`
 	Image       string `json:"image"`
 }
 
-type SponsorDto struct {
+type SponsorDTO struct {
 	Name        string `json:"name"`
 	Description string `json:"description"`
 	Logo        string `json:"logo"`
