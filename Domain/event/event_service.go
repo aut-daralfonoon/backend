@@ -79,7 +79,7 @@ func Register() {
 
 }
 
-func SingleSubjectRegister(eventId uint, userEmail string) error {
+func SingleSubjectRegister(regDTO *RegisterDTO) error {
 	return nil
 }
 
