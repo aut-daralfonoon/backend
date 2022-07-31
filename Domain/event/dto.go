@@ -29,3 +29,9 @@ type SponsorDTO struct {
 	Description string `json:"description"`
 	Logo        string `json:"logo"`
 }
+
+type RegisterDTO struct {
+	EventID       uint   `json:"event_id"`
+	UserID        uint   `json:"user_id"`
+	Presentations []uint `json:"presentations"`
+}
