@@ -14,6 +14,7 @@ type EventManager struct{
 
 func (manager *EventManager) Init(db *gorm.DB) error{
 	manager.db = db
+	return nil
 }
 
 func (manager *EventManager) Event(Id uint) (*EventDTO, error) {
