@@ -11,7 +11,7 @@ type EventManager struct{
 	db *gorm.DB
 }
 
-func Event(Id uint) (*EventDTO, error) {
+func (manager *EventManager) Event(Id uint) (*EventDTO, error) {
 	event, err := ReadEvent(Id)
 	if err != nil {
 		return nil, fmt.Errorf("could not get event: %w", err)
@@ -20,7 +20,7 @@ func Event(Id uint) (*EventDTO, error) {
 	return MapEventDTO(event, nil, nil)
 }
 
-func Events() ([]*EventDTO, error) {
+func (manager *EventManager) Events() ([]*EventDTO, error) {
 	events, err := ReadEvents()
 	if err != nil {
 		return nil, err
@@ -47,7 +47,7 @@ func Events() ([]*EventDTO, error) {
 	return eventDtos, nil
 }
 
-func AddEvent(eventDto *EventDTO) error {
+func (manager *EventManager) AddEvent(eventDto *EventDTO) error {
 	event, err := MapEvent(eventDto)
 	if err != nil {
 		return err
@@ -68,30 +68,30 @@ func validateEvent(event *HldEvent) error {
 	return nil
 }
 
-func ModifyEvent(*EventDTO) error {
+func (manager *EventManager) ModifyEvent(*EventDTO) error {
 	return nil
 }
 
-func PublishEvent(EventId uint) error {
+func (manager *EventManager) PublishEvent(EventId uint) error {
 	return nil
 }
 
-func ArchiveEvent(EventId uint) error {
+func (manager *EventManager) ArchiveEvent(EventId uint) error {
 	return nil
 }
 
-func DeleteEvent(EventId uint) error {
+func (manager *EventManager) DeleteEvent(EventId uint) error {
 	return nil
 }
 
-func Register() {
+func (manager *EventManager) Register() {
 
 }
 
-func SingleSubjectRegister(regDTO *RegisterDTO) error {
+func (manager *EventManager) SingleSubjectRegister(regDTO *RegisterDTO) error {
 	return nil
 }
 
-func GetEventParticipants(EventId uint) []string {
+func (manager *EventManager) GetEventParticipants(EventId uint) []string {
 	return nil
 }
