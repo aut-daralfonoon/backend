@@ -1,6 +1,15 @@
 package event
 
-import "fmt"
+import (
+	"fmt"
+
+	"gorm.io/gorm"
+)
+
+
+type EventManager struct{
+	db *gorm.DB
+}
 
 func Event(Id uint) (*EventDTO, error) {
 	event, err := ReadEvent(Id)
