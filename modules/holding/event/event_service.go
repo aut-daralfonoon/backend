@@ -95,3 +95,20 @@ func (manager *EventManager) SingleSubjectRegister(regDTO *RegisterDTO) error {
 func (manager *EventManager) GetEventParticipants(EventId uint) []string {
 	return nil
 }
+
+
+func Presentation(ID uint) (*PresentationDTO, error){
+	return nil,nil
+}
+
+func Presentations()([]*PresentationDTO, error){
+	return nil,nil
+}
+
+func PresentationsByEvent(eventID uint)([]*PresentationDTO, error){
+	return nil,nil
+}
+
+func getPresenters(prID uint)([]*PresenterDTO,[]*SponsorDTO, error){
+	return nil,nil,nil
+} 
