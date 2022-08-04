@@ -8,7 +8,7 @@ func Event(Id uint) (*EventDTO, error) {
 		return nil, fmt.Errorf("could not get event: %w", err)
 	}
 
-	return MapEventDTO(event,nil, nil)
+	return MapEventDTO(event, nil, nil)
 }
 
 func Events() ([]*EventDTO, error) {
@@ -19,16 +19,16 @@ func Events() ([]*EventDTO, error) {
 
 	eventDtos := []*EventDTO{}
 	for _, e := range events {
-		prs ,err  := PresentationsByEvent(e.Id)
+		prs, err := PresentationsByEvent(e.Id)
 		if err != nil {
 			return nil, err
 		}
-		presenters, sponsors ,err := getPresenters(prs[0].ID)
+		presenters, sponsors, err := getPresenters(prs[0].ID)
 		if err != nil {
 			return nil, err
 		}
 
-		ed, err := MapEventDTO(e,presenters[0], sponsors[0] )
+		ed, err := MapEventDTO(e, presenters[0], sponsors[0])
 		if err != nil {
 			return nil, err
 		}
@@ -55,7 +55,7 @@ func AddEvent(eventDto *EventDTO) error {
 	return nil
 }
 
-func validateEvent(event *EventModel) error {
+func validateEvent(event *HldEvent) error {
 	return nil
 }
 
