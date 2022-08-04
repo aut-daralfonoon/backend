@@ -11,6 +11,11 @@ type EventManager struct{
 	db *gorm.DB
 }
 
+
+func (manager *EventManager) Init(db *gorm.DB) error{
+	manager.db = db
+}
+
 func (manager *EventManager) Event(Id uint) (*EventDTO, error) {
 	event, err := ReadEvent(Id)
 	if err != nil {
