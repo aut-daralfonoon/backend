@@ -58,6 +58,7 @@
   "components": {
     "schemas": {
       "apievents_company": {
+
         "type": "object",
         "properties": {
           "name": {
