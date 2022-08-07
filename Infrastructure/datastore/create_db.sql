@@ -27,39 +27,39 @@ CREATE TABLE "users" (
   "id" SERIAL PRIMARY KEY,
   "first_name" varchar,
   "last_name" varchar,
-  "email" varchar,
+  "email" varchar NOT NULL,
   "phone_number" varchar,
-  "craeted_at" timestamp,
+  "created_at" timestamp,
   "last_login" timestamp,
   "role" role DEFAULT 'inactive'
 );
 
 CREATE TABLE "events" (
   "id" SERIAL PRIMARY KEY,
-  "title" varchar,
+  "title" varchar NOT NULL,
   "event_status" event_status NOT NULL DEFAULT 'inactive',
-  "start" timestamp,
-  "end" timestamp,
+  "start" timestamp NOT NULL,
+  "end" timestamp NOT NULL,
   "description" text,
   "poster" text,
   "archived_at" timestamp,
-  "craeted_at" timestamp,
-  "updated_at" timestamp
+  "created_at" timestamp NOT NULL,
+  "updated_at" timestamp NOT NULL
 );
 
 CREATE TABLE "presentations" (
   "id" SERIAL PRIMARY KEY,
   "event_id" int,
-  "title" varchar,
-  "presentation_type" presentation_type,
-  "session_status" session,
-  "capacity" int,
+  "title" varchar NOT NULL,
+  "presentation_type" presentation_type NOT NULL,
+  "session_status" session NOT NULL DEFAULT 'closed_to_join',
+  "capacity" int NOT NULL,
   "participant_number" int,
-  "start" timestamp,
-  "end" timestamp,
+  "start" timestamp NOT NULL,
+  "end" timestamp NOT NULL,
   "archived_at" timestamp,
-  "craeted_at" timestamp,
-  "updated_at" timestamp
+  "created_at" timestamp,
+  "updated_at" timestamp NOT NULL
 );
 
 CREATE TABLE "presenters" (
