@@ -1,92 +1,102 @@
+---
 openapi: 3.0.0
 info:
-  version: 1.0.0
   title: Back-end
   description: Daralfonoon back-end
-paths: 
+  version: 1.0.1
+servers:
+- url: https://virtserver.swaggerhub.com/amirhnajafiz/Daralfonoon/1.0.0
+  description: SwaggerHub API Auto Mocking
+paths:
   /api/events:
     get:
       summary: returns the list of all events
       description: all events endpoint
       responses:
-        '200':
+        "200":
           description: array of events (json)
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  type: object
-                  properties:
-                    id:
-                      type: integer
-                      example: 1
-                    title:
-                      type: string
-                      example: Docker Workshop
-                    description:
-                      type: string
-                      example: Workshop is about docker
-                    date:
-                      type: string
-                      example: 2/2/2022 17:00 PM
-                    enable:
-                      type: boolean
-                      example: true
-                      description: is registration enable or not
-                    poster:
-                      type: string
-                      description: poster link
-                    presenter:
-                      type: object
-                      properties:
-                        name:
-                          type: string
-                          example: parham alvani
-                        title:
-                          type: string
-                          example: back-end developer
-                        description:
-                          type: string
-                          example: Parham biography
-                        image:
-                          type: string
-                          description: image link
-                        company:
-                          type: object
-                          properties:
-                            name:
-                              type: string
-                              example: Snapp!
-                            description:
-                              type: string
-                              example: Snapp is good
-                            logo:
-                              type: string
-                              description: logo link
+                  $ref: '#/components/schemas/inline_response_200'
   /api/register:
     post:
       summary: registering for a workshop
-      description: register for a workshop with email 
+      description: register for a workshop with email
       requestBody:
-        required: true
         content:
           application/json:
             schema:
-              type: object
-              properties:
-                id:
-                  type: integer
-                  example: 1
-                  description: event id (needs validation)
-                email:
-                  type: string
-                  example: parham.alvani@snapp.cab
-                  description: user email (needs validation)
+              $ref: '#/components/schemas/api_register_body'
+        required: true
       responses:
-        '200':
+        "200":
           description: valid registraion
-servers:
-  # Added by API Auto Mocking Plugin
-  - description: SwaggerHub API Auto Mocking
-    url: https://virtserver.swaggerhub.com/amirhnajafiz/Daralfonoon/1.0.0
+components:
+  schemas:
+    apievents_company:
+      type: object
+      properties:
+        name:
+          type: string
+          example: Snapp!
+        description:
+          type: string
+          example: Snapp is good
+        logo:
+          type: string
+          description: logo link
+    apievents_presenter:
+      type: object
+      properties:
+        name:
+          type: string
+          example: parham alvani
+        title:
+          type: string
+          example: back-end developer
+        description:
+          type: string
+          example: Parham biography
+        image:
+          type: string
+          description: image link
+    inline_response_200:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+        title:
+          type: string
+          example: Docker Workshop
+        description:
+          type: string
+          example: Workshop is about docker
+        date:
+          type: string
+          example: 2/2/2022 17:00 PM
+        enable:
+          type: boolean
+          description: is registration enable or not
+          example: true
+        poster:
+          type: string
+          description: poster link
+        presenter:
+          $ref: '#/components/schemas/apievents_presenter'
+        company:
+          $ref: '#/components/schemas/apievents_company'
+    api_register_body:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: event id (needs validation)
+          example: 1
+        email:
+          type: string
+          description: user email (needs validation)
+          example: parham.alvani@snapp.cab
