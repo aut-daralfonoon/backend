@@ -3,7 +3,7 @@
   "info": {
     "title": "Back-end",
     "description": "Daralfonoon back-end",
-    "version": "1.0.0"
+    "version": "1.0.1"
   },
   "servers": [
     {
@@ -57,7 +57,8 @@
   },
   "components": {
     "schemas": {
-      "apievents_presenter_company": {
+      "apievents_company": {
+
         "type": "object",
         "properties": {
           "name": {
@@ -72,8 +73,7 @@
             "type": "string",
             "description": "logo link"
           }
-        },
-        "example": null
+        }
       },
       "apievents_presenter": {
         "type": "object",
@@ -93,12 +93,8 @@
           "image": {
             "type": "string",
             "description": "image link"
-          },
-          "company": {
-            "$ref": "#/components/schemas/apievents_presenter_company"
           }
-        },
-        "example": null
+        }
       },
       "inline_response_200": {
         "type": "object",
@@ -130,6 +126,9 @@
           },
           "presenter": {
             "$ref": "#/components/schemas/apievents_presenter"
+          },
+          "company": {
+            "$ref": "#/components/schemas/apievents_company"
           }
         }
       },
