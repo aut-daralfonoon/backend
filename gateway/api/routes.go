@@ -1,9 +1,0 @@
-package api
-
-
-
-func NewRouter(){
-	
-
-	
-}
