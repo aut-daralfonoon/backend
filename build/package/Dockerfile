@@ -2,7 +2,7 @@
 FROM golang:1.18-alpine
 
 # in app directory
-WORKDIR /app
+WORKDIR /../../
 
 # copy go mod and go sum
 COPY go.mod ./
@@ -15,11 +15,11 @@ RUN go mod download
 COPY * ./
 
 # building our application
-RUN go build -o /docker-gs-ping
+RUN go build -o ./internal/cmd/darolfonoon/main
 
 # expose on port 8080
 EXPOSE 8080
 
 # executing the .sh file
-CMD [ "/docker-gs-ping" ]
+CMD [ "/main" ]
 
