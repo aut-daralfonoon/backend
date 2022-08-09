@@ -1,10 +1,10 @@
 package main
 
 import (
-    "github.com/AUT-Daralfonoon/back-end/internal/cmd"
+    "github.com/AUT-Daralfonoon/back-end/internal/boot"
 )
 
 func main() {
     // starting our golang web server
-    cmd.Execute()
+    boot.Execute()
 }

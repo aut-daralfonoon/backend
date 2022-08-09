@@ -1,4 +1,4 @@
-package cmd
+package boot
 
 import (
     "log"
