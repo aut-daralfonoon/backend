@@ -12,10 +12,10 @@ build:
 
 # starting application
 start:
-	chmod +x ./main
+	chmod +x ./internal/cmd/darolfonoon/main
 	./main
 
 # go run
 run:
-	go run main.go
+	go run ./internal/cmd/darolfonoon/main.go
 	
