@@ -13,7 +13,7 @@
             ],
             "group": "build",
             "options": {
-                "cwd": "${workspaceFolder}/internal/cmd/darolfonoon/"
+                "cwd": "${workspaceFolder}/cmd/darolfonoon/"
             }
         },
         {

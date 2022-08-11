@@ -36,7 +36,7 @@ func NewEventProvider() {
 
 func ServerRouter() {
 	r := api.InitServer()
-	if err := r.Run("locahlhost:8080"); err != nil {
+	if err := r.Run("localhost:8080"); err != nil {
 		log.Fatalf("server could not start")
 	}
 }
