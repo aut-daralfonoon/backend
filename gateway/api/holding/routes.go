@@ -5,8 +5,9 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+
 func AddRoutes(parent *gin.RouterGroup){
-	r := parent.Group("/holding", nil)
+	r := parent.Group("/holding")
 
 	event.AddRoutes(r)
 }

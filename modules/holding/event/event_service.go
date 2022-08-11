@@ -3,21 +3,24 @@ package event
 import (
 	"fmt"
 
+	"github.com/AUT-Daralfonoon/back-end/infrastructure/datastore"
 	"gorm.io/gorm"
 )
 
-
-type EventManager struct{
+type EventManager struct {
 	db *gorm.DB
 }
 
+var db *gorm.DB
 
-func (manager *EventManager) Init(db *gorm.DB) error{
-	manager.db = db
-	return nil
+func InitManager() *EventManager {
+	db = datastore.GetorCreateDBConn()
+	return &EventManager{
+		db: db,
+	}
 }
 
-func (manager *EventManager) Event(Id uint) (*EventDTO, error) {
+func Event(Id uint) (*EventDTO, error) {
 	event, err := ReadEvent(Id)
 	if err != nil {
 		return nil, fmt.Errorf("could not get event: %w", err)
@@ -102,19 +105,18 @@ func (manager *EventManager) GetEventParticipants(EventId uint) []string {
 	return nil
 }
 
-
-func Presentation(ID uint) (*PresentationDTO, error){
-	return nil,nil
+func Presentation(ID uint) (*PresentationDTO, error) {
+	return nil, nil
 }
 
-func Presentations()([]*PresentationDTO, error){
-	return nil,nil
+func Presentations() ([]*PresentationDTO, error) {
+	return nil, nil
 }
 
-func PresentationsByEvent(eventID uint)([]*PresentationDTO, error){
-	return nil,nil
+func PresentationsByEvent(eventID uint) ([]*PresentationDTO, error) {
+	return nil, nil
 }
 
-func getPresenters(prID uint)([]*PresenterDTO,[]*SponsorDTO, error){
-	return nil,nil,nil
-} 
+func getPresenters(prID uint) ([]*PresenterDTO, []*SponsorDTO, error) {
+	return nil, nil, nil
+}
