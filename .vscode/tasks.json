@@ -21,6 +21,18 @@
             "type": "shell",
             "command": "migrate",
             "args": ["create", "-ext", "sql", "-dir", "./Infrastructure/datastore/v1","-seq", "${input:migrationName}"]
+        },
+        {
+            "label": "up migrations - <services>",
+            "type": "shell",
+            "command": "migrate",
+            "args": ["-database", "postgres://postgres:postgres@localhost:5432/darolfonoon?sslmode=disable", "-path", "./Infrastructure/datastore/v1", "up"]
+        },
+        {
+            "label": "down migrations- <services>",
+            "type": "shell",
+            "command": "migrate",
+            "args": ["-database", "postgres://postgres:postgres@localhost:5432/darolfonoon?sslmode=disable", "-path", "./Infrastructure/datastore/v1", "up"]
         }
     ],
     "inputs": [
