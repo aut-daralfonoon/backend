@@ -1,0 +1,34 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "run main",
+            "type": "shell",
+            "command": "go",
+            "args": [
+                "run",
+                "main.go",
+            ],
+            "group": "build",
+            "options": {
+                "cwd": "${workspaceFolder}/internal/cmd/darolfonoon/"
+            }
+        },
+        {
+            "label": "create migrations",
+            "type": "shell",
+            "command": "migrate",
+            "args": ["create", "-ext", "sql", "-dir", "./Infrastructure/datastore/v1","-seq", "${input:migrationName}"]
+        }
+    ],
+    "inputs": [
+        {
+            "id": "migrationName",
+            "description": "File Name for Migrations:",
+            "default": "migration_v1",
+            "type": "promptString"
+        },
+    ]
+}
