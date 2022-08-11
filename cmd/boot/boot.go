@@ -21,6 +21,7 @@ func Boot() {
 }
 
 func NewProvider() {
+	bootManagers()
 	NewEventProvider()
 }
 
