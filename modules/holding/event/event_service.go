@@ -3,7 +3,7 @@ package event
 import (
 	"fmt"
 
-	"github.com/AUT-Daralfonoon/back-end/infrastructure/datastore"
+	"github.com/AUT-Daralfonoon/back-end/infra/datastore"
 	"gorm.io/gorm"
 )
 
