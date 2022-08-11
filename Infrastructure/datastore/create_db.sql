@@ -2,6 +2,7 @@
 /*
   to run script use:
   psql -U postgres -d postgres -a -f .\create_db.sql
+  or run create db task in vscode
 */
 
 CREATE DATABASE darolfonoon
