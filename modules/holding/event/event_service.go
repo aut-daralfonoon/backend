@@ -11,10 +11,8 @@ type EventManager struct {
 	db *gorm.DB
 }
 
-var db *gorm.DB
-
 func InitManager() *EventManager {
-	db = datastore.GetorCreateDBConn()
+	db := datastore.GetorCreateDBConn()
 	return &EventManager{
 		db: db,
 	}
