@@ -18,7 +18,7 @@ func InitManager() *EventManager {
 	}
 }
 
-func Event(Id uint) (*EventDTO, error) {
+func (manager EventManager) Event(Id uint) (*EventDTO, error) {
 	event, err := ReadEvent(Id)
 	if err != nil {
 		return nil, fmt.Errorf("could not get event: %w", err)
