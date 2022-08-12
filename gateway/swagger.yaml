@@ -20,7 +20,6 @@ paths:
               schema:
                 type: array
                 items:
-fix/architecture
                   $ref: '#/components/schemas/inline_response_200'
   /api/register:
     post:
@@ -101,78 +100,3 @@ components:
           type: string
           description: user email (needs validation)
           example: parham.alvani@snapp.cab
-=======
-                  type: object
-                  properties:
-                    id:
-                      type: integer
-                      example: 1
-                    title:
-                      type: string
-                      example: Docker Workshop
-                    description:
-                      type: string
-                      example: Workshop is about docker
-                    date:
-                      type: string
-                      example: 2/2/2022 17:00 PM
-                    enable:
-                      type: boolean
-                      example: true
-                      description: is registration enable or not
-                    poster:
-                      type: string
-                      description: poster link
-                    presenter:
-                      type: object
-                      properties:
-                        name:
-                          type: string
-                          example: parham alvani
-                        title:
-                          type: string
-                          example: back-end developer
-                        description:
-                          type: string
-                          example: Parham biography
-                        image:
-                          type: string
-                          description: image link
-                        company:
-                          type: object
-                          properties:
-                            name:
-                              type: string
-                              example: Snapp!
-                            description:
-                              type: string
-                              example: Snapp is good
-                            logo:
-                              type: string
-                              description: logo link
-  /api/register:
-    post:
-      summary: registering for a workshop
-      description: register for a workshop with email 
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                id:
-                  type: integer
-                  example: 1
-                  description: event id (needs validation)
-                email:
-                  type: string
-                  example: parham.alvani@snapp.cab
-                  description: user email (needs validation)
-      responses:
-        '200':
-          description: valid registraion
-servers:
-  # Added by API Auto Mocking Plugin
-  - description: SwaggerHub API Auto Mocking
-    url: https://virtserver.swaggerhub.com/amirhnajafiz/Daralfonoon/1.0.0
