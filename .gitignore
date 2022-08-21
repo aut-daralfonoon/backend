@@ -16,3 +16,6 @@
 
 
 #IDE config files
+.vscode
+
+.idea/
