@@ -26,17 +26,27 @@ jobs:
           version: v1.29
 
   build:
+    needs: lint
+    name: build
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-
-    - name: Set up Go
+    - name: Set up Golang
       uses: actions/setup-go@v3
       with:
         go-version: 1.18
-
     - name: Build
       run: go build -v ./...
 
+  test:
+    needs: build
+    name: test
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Golang
+      uses: actions/setup-go@v3
+      with:
+        go-version: 1.18
     - name: Test
       run: go test -v ./...
