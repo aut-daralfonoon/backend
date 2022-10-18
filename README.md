@@ -13,4 +13,4 @@ Our CI/CD pipeline contains 4 steps.
 - Test
 - Docker (Only image build)
 
-Please make sure to merge your requests to **main** with a success pipeline.
+Please make sure to merge your requests to **main** with a successful pipeline. (Suck it Emad)
